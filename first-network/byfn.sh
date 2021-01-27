@@ -149,11 +149,68 @@ function checkPrereqs() {
   done
 }
 
+CA_STARUP_TIMEOUT=30
+
 # Generate the needed certificates, the genesis block and start the network.
 function networkUp() {
   checkPrereqs
-  # generate artifacts if they don't exist
-  if [ ! -d "crypto-config" ]; then
+  COMPOSE_FILES="-f ${COMPOSE_FILE}"
+  if [ -d "crypto-config" ]; then
+    removeCryptoConfig
+  fi
+  mkdir crypto-config
+
+  if [ "${CERTIFICATE_AUTHORITIES}" == "true" ]; then
+    cp -rp fabric-ca crypto-config/
+
+    IMAGE_TAG=$IMAGETAG docker-compose -f ${COMPOSE_FILE_CA} up -d 2>&1
+    . crypto-config/fabric-ca/registerEnroll.sh
+
+    for org in "org1" "org2" "ordererOrg"
+    do
+      echo "current org is ${org}"
+      waitSeconds=0
+     while :
+      do
+        caUpFlag=true
+        for caFile in "crypto-config/fabric-ca/${org}/IssuerPublicKey" \
+                      "crypto-config/fabric-ca/${org}/tls-cert.pem"
+        do
+          if [ ! -f "$caFile" ] ; then
+            echo "no $caFile"
+            caUpFlag=false
+          fi
+        done
+
+        if [ "$caUpFlag" = "false" ] ; then
+          sleep 1
+          let waitSeconds++
+          echo "have waiting for ${org} ca server startd ${waitSeconds} seconds..."
+          if [ ${waitSeconds} -gt $CA_STARUP_TIMEOUT ]; then
+            echo "waiting too long for ${org} ca, exit"
+            exit 1
+          fi
+        else
+          break
+        fi
+      done
+    done
+   
+    infoln "Create Org1 Identities"
+    createOrg1
+
+    infoln "Create Org2 Identities"
+    createOrg2
+
+    infoln "Create Orderer Org Identities"
+    createOrderer
+
+    echo "Generate CCP files for Org1 and Org2"
+    ./ccp-generate.sh
+
+    generateChannelArtifacts
+  else
+    #generate artifacts if they don't exist
     generateCerts
     replacePrivateKey
     generateChannelArtifacts
@@ -271,6 +328,10 @@ function upgradeNetwork() {
   fi
 }
 
+function removeCryptoConfig {
+    docker run --rm -v $PWD:/first-network busybox rm -rf /first-network/crypto-config
+}
+
 # Tear down running network
 function networkDown() {
   # stop org3 containers also in addition to org1 and org2, in case we were running sample to add org3
@@ -287,7 +348,7 @@ function networkDown() {
     #Cleanup images
     removeUnwantedImages
     # remove orderer block and other channel configuration transactions and certs
-    rm -rf channel-artifacts/*.block channel-artifacts/*.tx crypto-config ./org3-artifacts/crypto-config/ channel-artifacts/org3.json
+    rm -rf channel-artifacts/*.block channel-artifacts/*.tx ./org3-artifacts/crypto-config/ channel-artifacts/org3.json
     # remove the docker-compose yaml file that was customized to the example
     rm -f docker-compose-e2e.yaml
   fi
@@ -359,7 +420,7 @@ function generateCerts() {
     rm -Rf crypto-config
   fi
   set -x
-  cryptogen generate --config=./crypto-config.yaml
+  cryptogen generate --gm --config=./crypto-config.yaml
   res=$?
   set +x
   if [ $res -ne 0 ]; then
