@@ -3,14 +3,14 @@ package lib
 import (
 	"errors"
 	"fmt"
-	ClientMsp "github.com/tw-bc-group/fabric-sdk-go-gm/pkg/client/msp"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/common/providers/core"
-	mspid "github.com/tw-bc-group/fabric-sdk-go-gm/pkg/common/providers/msp"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/core/config"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/core/cryptosuite"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/fabsdk"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/gateway"
-	"github.com/tw-bc-group/fabric-sdk-go-gm/pkg/msp"
+	ClientMsp "github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
+	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
+	mspid "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
+	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
+	"github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite"
+	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
+	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
+	"github.com/hyperledger/fabric-sdk-go/pkg/msp"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -88,7 +88,6 @@ func (f *ClientFixture) Setup(configFile string) *fabsdk.FabricSDK {
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer sdk.Close()
 
 	configBackend, err := sdk.Config()
 	if err != nil {
