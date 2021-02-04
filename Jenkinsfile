@@ -36,7 +36,7 @@ pipeline {
                 docker tag $IMAGE_ORDERER hyperledger/fabric-orderer:latest
                 docker tag $IMAGE_CA hyperledger/fabric-ca:latest
                 docker tag $IMAGE_TOOLS hyperledger/fabric-tools:latest
-                docker tag $IMAGEIMAGE_CCENV_PEER hyperledger/fabric-ccenv:latest
+                docker tag $IMAGE_CCENV hyperledger/fabric-ccenv:latest
                 '''
 
                 echo "Clean fabcar"
