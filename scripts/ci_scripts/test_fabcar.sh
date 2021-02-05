@@ -5,9 +5,9 @@ SCRIP_PATH=$(readlink -f "$(dirname "$0")")
 CURRENT_USER_ID=0
 DOCKER_GROUP_ID=$(getent group docker | cut -d ':' -f 3)
 
-docker build --build-arg IMAGE_CA=${IMAGE_CA-hyperledger/fabric-ca-gm:latest} \
-             --build-arg IMAGE_TOOLS=${IMAGE_TOOLS-hyperledger/fabric-tools-gm:latest} \
-             -t hyperledger/fabric-tools-ca-gm:latest \
+docker build --build-arg IMAGE_CA=${IMAGE_CA-hyperledger/fabric-ca:latest} \
+             --build-arg IMAGE_TOOLS=${IMAGE_TOOLS-hyperledger/fabric-tools:latest} \
+             -t hyperledger/fabric-tools-ca:latest \
              - < $SCRIP_PATH/Dockerfile
 
 docker run --rm \
@@ -30,5 +30,5 @@ docker run --rm \
     -e "ZHONGHUAN_CE_CONFIG" \
     -e "ZHONGHUAN_LOG_LEVEL" \
     --network host \
-    hyperledger/fabric-tools-ca-gm:latest \
+    hyperledger/fabric-tools-ca:latest \
     $1
