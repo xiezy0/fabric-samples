@@ -18,7 +18,7 @@ fabcar-clean:
 
 .PHONY: sdk-test
 sdk-test:
-	docker run --rm -v $PWD:/first-network busybox rm -rf /first-network/fabcar/go/wallet/*
+	docker run --rm -v $(PWD):/first-network busybox rm -rf /first-network/fabcar/go/wallet/
 	docker run --rm -v /tmp:/tmp busybox rm -rf /tmp/state-store
 	docker run --rm -v /tmp:/tmp busybox rm -rf /tmp/msp
 
