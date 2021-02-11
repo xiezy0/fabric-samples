@@ -11,6 +11,6 @@ docker run --rm \
     -v "$PWD/${BUILD_DIR}/gocache:/opt/gopath/cache" \
     -e GOCACHE=/opt/gopath/cache \
     -w "$PWD/fabcar" \
-    --network host \
-    twblockchain/fabric-baseimage:latest \
+    --network net_byfn \
+    hyperledger/fabric-baseimage:amd64-0.4.22 \
     $1
