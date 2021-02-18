@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'IMAGE_PEER', defaultValue: "${env.DOCKER_REGISTRY}/twbc/fabric-peer:latest")
-        string(name: 'IMAGE_ORDERER', defaultValue: "${env.DOCKER_REGISTRY}/twbc/fabric-orderer:latest")
-        string(name: 'IMAGE_CA', defaultValue: "${env.DOCKER_REGISTRY}/twbc/fabric-ca:latest")
-        string(name: 'IMAGE_TOOLS', defaultValue: "${env.DOCKER_REGISTRY}/twbc/fabric-tools:latest")
-        string(name: 'IMAGE_CCENV', defaultValue: "${env.DOCKER_REGISTRY}/twbc/fabric-ccenv:latest")
+        string(name: 'IMAGE_PEER', defaultValue: "twblockchain/fabric-peer:latest")
+        string(name: 'IMAGE_ORDERER', defaultValue: "twblockchain/fabric-orderer:latest")
+        string(name: 'IMAGE_CA', defaultValue: "twblockchain/fabric-ca:latest")
+        string(name: 'IMAGE_TOOLS', defaultValue: "twblockchain/fabric-tools:latest")
+        string(name: 'IMAGE_CCENV', defaultValue: "twblockchain/fabric-ccenv:latest")
         choice(name: 'BYFN_CA', choices: ['no', 'yes'])
         string(name: 'START_FABCAR_TIMEOUT_MINS', defaultValue: '10')
     }
