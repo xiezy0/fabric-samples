@@ -5,6 +5,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/GeertJohan/go.incremental v1.0.0/go.mod h1:6fAjUhbVuX1KcMD3c8TEgVUqmo4seqhv0i0kdATSkM0=
 github.com/GeertJohan/go.rice v1.0.0/go.mod h1:eH6gbSOAUv07dQuZVnBmoDP8mgsM1rtixis4Tib9if0=
 github.com/Hyperledger-TWGC/tjfoc-gm v0.0.0-20201027032413-de75d571dd85/go.mod h1:IEZwhbsvkkQqIUuT5++IZhLypuMjCWaTdfZro271P9U=
+github.com/Hyperledger-TWGC/tjfoc-gm v0.0.0-20210222084201-e65875425ad3 h1:rDlUFd5Ycz2GpsQ4UwU2DHEw7qk+iWL+mMprCRdgZbg=
+github.com/Hyperledger-TWGC/tjfoc-gm v0.0.0-20210222084201-e65875425ad3/go.mod h1:n78bvYQvejWxYjFuK3hicFszvuk+I0/G9AyZsNA7XMQ=
 github.com/Hyperledger-TWGC/tjfoc-gm v1.4.0 h1:fYkf2oSzYFLfqnyl3VHW+KIs0lNAYQWjsLMS3v56q7I=
 github.com/Hyperledger-TWGC/tjfoc-gm v1.4.0/go.mod h1:pjo29FaEP0cii6emm2Lw/+3UZxO2SGQrUXntmKUD37U=
 github.com/Knetic/govaluate v3.0.0+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
@@ -172,12 +174,10 @@ github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/tjfoc/gmsm v1.4.0 h1:8nbaiZG+iVdh+fXVw0DZoZZa7a4TGm3Qab+xdrdzj8s=
 github.com/tjfoc/gmsm v1.4.0/go.mod h1:j4INPkHWMrhJb38G+J6W4Tw0AbuN8Thu3PbdVYhVcTE=
-github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210207151024-f093ea23a037 h1:zUrpOuGyuzQjhgZWwP4HqXViG2yTuaWY9thlwrRbDFQ=
-github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210207151024-f093ea23a037/go.mod h1:GRPLzAevQeYi3pDZig3SJAmZNm0OWP5agDvwH1LjQWk=
-github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219030331-e07f70bf3daa h1:uY+XQiBqjzY0r4O9+1W83SEx1u7PLunr0ZLG5VBcEtk=
-github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219030331-e07f70bf3daa/go.mod h1:GRPLzAevQeYi3pDZig3SJAmZNm0OWP5agDvwH1LjQWk=
 github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219035621-7f2c0d79b3a3 h1:J2LdlEdLy2P6mwiVrLOTSd92jzbxTMUOtpdrkVkq7lQ=
 github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219035621-7f2c0d79b3a3/go.mod h1:GRPLzAevQeYi3pDZig3SJAmZNm0OWP5agDvwH1LjQWk=
+github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210222100917-124faa2badf4 h1:tqtwVFmJmcIRYf2ZIYV/8IGd7hsZlMJbrAjo55otgEU=
+github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210222100917-124faa2badf4/go.mod h1:y8RnXxzdqDYW+1sGoJbHb37jUIj2v8AV7+bUmLtSGGo=
 github.com/tw-bc-group/net-go-gm v0.0.0-20201030055721-5906b2d70408 h1:SMXViaMOBbyeLwRUZ1FuT3yXXJ6omNA83wSPwPA15hY=
 github.com/tw-bc-group/net-go-gm v0.0.0-20201030055721-5906b2d70408/go.mod h1:AXgrqWHioYmKFNTKYNH3nVQi701PlOdUrD6dn7sIpCM=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
@@ -237,6 +237,8 @@ golang.org/x/sys v0.0.0-20190801041406-cbf593c0f2f3/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f h1:+Nyd8tzPX9R7BWHguqsrbFdRx3WQ/1ib8I44HXV5yTA=
 golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20210104204734-6f8348627aad h1:MCsdmFSdEd4UEa5TKS5JztCRHK/WtvNei1edOj5RSRo=
+golang.org/x/sys v0.0.0-20210104204734-6f8348627aad/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
