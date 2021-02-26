@@ -8,11 +8,11 @@
     <img src="https://img.shields.io/badge/GM-enable-green" alt="gm tls enable">
   </p>
 </h1>
-<h4 align="center">本项目是Hyperledger Fabric Samples的国密支持版本。</h4>
+<h4 align="center">本项目是 Hyperledger Fabric Samples 的国密支持版本。</h4>
 
 ## 简介
 
-本项目是Hyperledger Fabric国密化的关联项目，访问[Hyperledger Fabric国密版](https://github.com/tw-bc-group/fabric)了解更多。
+本项目是 Hyperledger Fabric 国密化的关联项目，访问[ Hyperledger Fabric 国密版](https://github.com/tw-bc-group/fabric)了解更多。
 
 ### 本项目的优势
 本项目涵盖 Fabric、Fabric CA 以及 Fabric SDK 的全链路国密改造，主要包括以下功能点：
@@ -20,8 +20,9 @@
 * 应用数据国密加密/签名/解密
 * 国密 TLS 的 GRPCS 和 HTTPS 通讯
 * 国密加密机/协同运算集成
+* 默认启用了中间 CA 功能，如果需要关闭，请修改 fabcar/startFabric.sh 46 行，将  -z 参数去掉
 
-### 什么是Hyperledger Fabric？
+### 什么是 Hyperledger Fabric？
 Hyperledger Fabric是用于开发解决方案和应用程序的企业级许可分布式分类账本框架，可以去[官网](https://www.hyperledger.org/use/fabric)了解更多。
 
 ### 什么是国密(GM)？
@@ -31,29 +32,29 @@ Hyperledger Fabric是用于开发解决方案和应用程序的企业级许可�
 
 ### 依赖
 * Fabric版本：[1.4](https://github.com/hyperledger/fabric/tree/release-1.4)
-* 国密实现库：[基于同济Golang国密实现库](https://github.com/Hyperledger-TWGC/tjfoc-gm)
+* 国密实现库：[基于同济 Golang 国密实现库](https://github.com/Hyperledger-TWGC/tjfoc-gm)
 
 ### 关联代码库
-本代码库为Fabric Core的国密化版本，Fabric的其他部分国密化改造如下：
-* [国密化Fabric Core](https://github.com/tw-bc-group/fabric)
-* [国密化CA](https://github.com/tw-bc-group/fabric-ca)
-* [国密化SDK](https://github.com/tw-bc-group/fabric-sdk-go)
+本代码库为 Fabric Samples 的国密化版本，Fabric 的其他部分国密化改造如下：
+* [国密化 Fabric Core](https://github.com/tw-bc-group/fabric)
+* [国密化 CA](https://github.com/tw-bc-group/fabric-ca)
+* [国密化 SDK](https://github.com/tw-bc-group/fabric-sdk-go)
 
 ## 如何使用
-与官方Fabric Samples 1.4一致，参考[Fabric官方文档](https://hyperledger-fabric.readthedocs.io/en/latest/install.html)，使用Fabcar进行测试。
+与官方Fabric Samples 1.4一致，参考[ Fabric官方文档 ](https://hyperledger-fabric.readthedocs.io/en/latest/install.html)，使用Fabcar进行测试。
 
 ### 欢迎反馈
-欢迎各种反馈～ 你可以在[issues页面](https://github.com/tw-bc-group/fabric-gm/issues)提交反馈，我们收到后会尽快处理。
+欢迎各种反馈～ 你可以在[ issues 页面](https://github.com/tw-bc-group/fabric-gm/issues)提交反馈，我们收到后会尽快处理。
 
 ### 如何贡献
 欢迎通过以下方式贡献本项目：
 
-* 提带有label的issue
+* 提带有 label 的 issue
 * 提出任何期望的功能、改进
-* 提交bug
-* 修复bug
+* 提交 bug
+* 修复 bug
 * 参与讨论并帮助决策
-* 提交Pull Request
+* 提交 Pull Request
 
 ## 关于我们
-国密化改造工作主要由ThoughtWorks完成，想要了解更多/商业合作/联系我们，欢迎访问我们的[官网](https://blockchain.thoughtworks.cn/)。
+国密化改造工作主要由 ThoughtWorks 区块链团队完成，想要了解更多/商业合作/联系我们，欢迎访问我们的[官网](https://blockchain.thoughtworks.cn/)。
