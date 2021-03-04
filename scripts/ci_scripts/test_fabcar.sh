@@ -16,7 +16,6 @@ docker run --rm \
     -v "$(command -v docker):$(command -v docker)" \
     -v "$(command -v docker-compose):$(command -v docker-compose)" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
-    -v "$PWD/first-network/zhonghuan-ce:/var/zhonghuan" \
     -w "$PWD/fabcar" \
     -e "IMAGE_PEER" \
     -e "IMAGE_ORDERER" \
@@ -27,8 +26,6 @@ docker run --rm \
     -e "ALIBABA_CLOUD_REGION" \
     -e "ALIBABA_CLOUD_ACCESS_KEY_ID" \
     -e "ALIBABA_CLOUD_ACCESS_KEY_SECRET" \
-    -e "ZHONGHUAN_CE_CONFIG" \
-    -e "ZHONGHUAN_LOG_LEVEL" \
     --network host \
     hyperledger/fabric-tools-ca:latest \
     $1
