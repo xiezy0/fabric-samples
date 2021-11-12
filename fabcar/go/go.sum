@@ -178,6 +178,7 @@ github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219035621-7f2c0d79b3a3 h1:J2Ldl
 github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210219035621-7f2c0d79b3a3/go.mod h1:GRPLzAevQeYi3pDZig3SJAmZNm0OWP5agDvwH1LjQWk=
 github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210222100917-124faa2badf4 h1:tqtwVFmJmcIRYf2ZIYV/8IGd7hsZlMJbrAjo55otgEU=
 github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210222100917-124faa2badf4/go.mod h1:y8RnXxzdqDYW+1sGoJbHb37jUIj2v8AV7+bUmLtSGGo=
+github.com/tw-bc-group/fabric-sdk-go v0.0.0-20210223114754-531c526448a2/go.mod h1:y8RnXxzdqDYW+1sGoJbHb37jUIj2v8AV7+bUmLtSGGo=
 github.com/tw-bc-group/net-go-gm v0.0.0-20201030055721-5906b2d70408 h1:SMXViaMOBbyeLwRUZ1FuT3yXXJ6omNA83wSPwPA15hY=
 github.com/tw-bc-group/net-go-gm v0.0.0-20201030055721-5906b2d70408/go.mod h1:AXgrqWHioYmKFNTKYNH3nVQi701PlOdUrD6dn7sIpCM=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=

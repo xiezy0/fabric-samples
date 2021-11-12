@@ -5,9 +5,9 @@ SCRIP_PATH=$(readlink -f "$(dirname "$0")")
 CURRENT_USER_ID=0
 DOCKER_GROUP_ID=$(getent group docker | cut -d ':' -f 3)
 
-docker build --build-arg IMAGE_CA=${IMAGE_CA-hyperledger/fabric-ca:latest} \
-             --build-arg IMAGE_TOOLS=${IMAGE_TOOLS-hyperledger/fabric-tools:latest} \
-             -t hyperledger/fabric-tools-ca:latest \
+docker build --build-arg IMAGE_CA=${IMAGE_CA-twblockchain/fabric-ca:latest} \
+             --build-arg IMAGE_TOOLS=${IMAGE_TOOLS-twblockchain/fabric-tools:latest} \
+             -t twblockchain/fabric-tools-ca:latest \
              - < $SCRIP_PATH/Dockerfile
 
 docker run --rm \
@@ -27,5 +27,5 @@ docker run --rm \
     -e "ALIBABA_CLOUD_ACCESS_KEY_ID" \
     -e "ALIBABA_CLOUD_ACCESS_KEY_SECRET" \
     --network host \
-    hyperledger/fabric-tools-ca:latest \
+    twblockchain/fabric-tools-ca:latest \
     $1

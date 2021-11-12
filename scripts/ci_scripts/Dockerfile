@@ -1,5 +1,5 @@
-ARG IMAGE_CA=hyperledger/fabric-ca:latest
-ARG IMAGE_TOOLS=hyperledger/fabric-tools:latest
+ARG IMAGE_CA=twblockchain/fabric-ca:latest
+ARG IMAGE_TOOLS=twblockchain/fabric-tools:latest
 
 FROM ${IMAGE_CA} AS ca
 

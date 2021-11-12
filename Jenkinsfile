@@ -32,11 +32,11 @@ pipeline {
                 docker pull $IMAGE_TOOLS
                 docker pull $IMAGE_CCENV
 
-                docker tag $IMAGE_PEER hyperledger/fabric-peer:latest
-                docker tag $IMAGE_ORDERER hyperledger/fabric-orderer:latest
-                docker tag $IMAGE_CA hyperledger/fabric-ca:latest
-                docker tag $IMAGE_TOOLS hyperledger/fabric-tools:latest
-                docker tag $IMAGE_CCENV hyperledger/fabric-ccenv:latest
+                docker tag $IMAGE_PEER twblockchain/fabric-peer:latest
+                docker tag $IMAGE_ORDERER twblockchain/fabric-orderer:latest
+                docker tag $IMAGE_CA twblockchain/fabric-ca:latest
+                docker tag $IMAGE_TOOLS twblockchain/fabric-tools:latest
+                docker tag $IMAGE_CCENV twblockchain/fabric-ccenv:latest
                 '''
 
                 echo "Clean fabcar"
